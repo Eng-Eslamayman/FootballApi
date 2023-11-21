@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballApi", "FootballApi\FootballApi.csproj", "{05F2FE23-0E36-4A3E-A9FF-5B85ECCF681F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballApi", "FootballApi\FootballApi.csproj", "{05F2FE23-0E36-4A3E-A9FF-5B85ECCF681F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballApi.Core", "FootballApi.Core\FootballApi.Core.csproj", "{E2398D80-2D04-47B9-B74A-F3D86C777F76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballApi.Core", "FootballApi.Core\FootballApi.Core.csproj", "{E2398D80-2D04-47B9-B74A-F3D86C777F76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballApi.EF", "FootballApi.EF\FootballApi.EF.csproj", "{D072B45D-36B0-41CB-85F2-C249F12A542B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballApi.EF", "FootballApi.EF\FootballApi.EF.csproj", "{D072B45D-36B0-41CB-85F2-C249F12A542B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityLayer", "SecurityLayer\SecurityLayer.csproj", "{B0C04A04-1E71-4601-9BFA-194522FF577E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D072B45D-36B0-41CB-85F2-C249F12A542B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D072B45D-36B0-41CB-85F2-C249F12A542B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D072B45D-36B0-41CB-85F2-C249F12A542B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C04A04-1E71-4601-9BFA-194522FF577E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C04A04-1E71-4601-9BFA-194522FF577E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C04A04-1E71-4601-9BFA-194522FF577E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C04A04-1E71-4601-9BFA-194522FF577E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

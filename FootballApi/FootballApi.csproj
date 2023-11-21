@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FootballApi.EF\FootballApi.EF.csproj" />
+    <ProjectReference Include="..\SecurityLayer\SecurityLayer.csproj" />
   </ItemGroup>
 
 </Project>
