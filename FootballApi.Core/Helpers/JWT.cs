@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FootballApi.EF.Helpers
+namespace FootballApi.Core.Helpers
 {
     public class JWT
     {

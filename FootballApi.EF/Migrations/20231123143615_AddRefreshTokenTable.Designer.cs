@@ -4,6 +4,7 @@ using FootballApi.EF.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FootballApi.EF.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231123143615_AddRefreshTokenTable")]
+    partial class AddRefreshTokenTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,7 +117,7 @@ namespace FootballApi.EF.Migrations
                     b.ToTable("Player");
                 });
 
-            modelBuilder.Entity("FootballApi.EF.Repositories.ApplicationUser", b =>
+            modelBuilder.Entity("FootballApi.Core.SecurityDTOs.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -342,7 +345,7 @@ namespace FootballApi.EF.Migrations
                     b.Navigation("Club");
                 });
 
-            modelBuilder.Entity("FootballApi.EF.Repositories.ApplicationUser", b =>
+            modelBuilder.Entity("FootballApi.Core.SecurityDTOs.ApplicationUser", b =>
                 {
                     b.OwnsMany("FootballApi.Core.Models.RefreshToken", "RefreshTokens", b1 =>
                         {
@@ -389,7 +392,7 @@ namespace FootballApi.EF.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("FootballApi.EF.Repositories.ApplicationUser", null)
+                    b.HasOne("FootballApi.Core.SecurityDTOs.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -398,7 +401,7 @@ namespace FootballApi.EF.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("FootballApi.EF.Repositories.ApplicationUser", null)
+                    b.HasOne("FootballApi.Core.SecurityDTOs.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -413,7 +416,7 @@ namespace FootballApi.EF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FootballApi.EF.Repositories.ApplicationUser", null)
+                    b.HasOne("FootballApi.Core.SecurityDTOs.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -422,7 +425,7 @@ namespace FootballApi.EF.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("FootballApi.EF.Repositories.ApplicationUser", null)
+                    b.HasOne("FootballApi.Core.SecurityDTOs.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -1,4 +1,6 @@
 ﻿using FootballApi.Core.Models;
+using FootballApi.EF;
+using FootballApi.EF.Repositories;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FootballApi.EF.Data
 {
-    public class ApplicationDbContext:IdentityDbContext
+    public class ApplicationDbContext:IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         { }

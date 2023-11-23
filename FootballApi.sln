@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballApi.Core", "Footbal
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballApi.EF", "FootballApi.EF\FootballApi.EF.csproj", "{D072B45D-36B0-41CB-85F2-C249F12A542B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityLayer", "SecurityLayer\SecurityLayer.csproj", "{B0C04A04-1E71-4601-9BFA-194522FF577E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{D072B45D-36B0-41CB-85F2-C249F12A542B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D072B45D-36B0-41CB-85F2-C249F12A542B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D072B45D-36B0-41CB-85F2-C249F12A542B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0C04A04-1E71-4601-9BFA-194522FF577E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0C04A04-1E71-4601-9BFA-194522FF577E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0C04A04-1E71-4601-9BFA-194522FF577E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0C04A04-1E71-4601-9BFA-194522FF577E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

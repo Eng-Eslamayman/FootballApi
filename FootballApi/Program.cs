@@ -1,8 +1,12 @@
-
+using FootballApi.Core;
+using FootballApi.Core.Services;
+using FootballApi.EF;
+using FootballApi.EF.AutoMapperConfig;
 using FootballApi.EF.Data;
+using FootballApi.EF.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SecurityLayer.SecurityDTOs;
+using System.Reflection;
 
 namespace FootballApi
 {
@@ -22,7 +26,13 @@ namespace FootballApi
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
             option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped(typeof(IBaseService<>), typeof(BaseRepository<>));
+
             builder.Services.AddIdentity<ApplicationUser,IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+
+            builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(MapperProfile)));
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
