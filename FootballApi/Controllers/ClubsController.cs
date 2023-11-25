@@ -4,11 +4,13 @@ using FootballApi.Core.Models;
 using FootballApi.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FootballApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ClubsController : ControllerBase
     {
         readonly IUnitOfWork _unitOfWork;

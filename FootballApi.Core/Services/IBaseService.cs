@@ -15,5 +15,8 @@ namespace FootballApi.Core.Services
         T Delete(int id);
         Task<T> Add(T entity);
         Task<T> FindAsync(Expression<Func<T, bool>> criteria);
+        Task<IEnumerable<T>> FindAllAsync(Expression<Func<T, bool>> criteria, string[] includes = null);
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);
+        void DeleteRange(IEnumerable<T> entities);
     }
 }

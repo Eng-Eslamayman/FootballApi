@@ -50,5 +50,24 @@ namespace FootballApi.EF.Repositories
         {
              _context.Set<T>().Update(entity);
         }
+        public async Task<IEnumerable<T>> FindAllAsync(Expression<Func<T, bool>> criteria, string[] includes = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
+
+            if (includes != null)
+                foreach (var include in includes)
+                    query = query.Include(include);
+
+            return await query.Where(criteria).ToListAsync();
+        }
+        public async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities)
+        {
+            await _context.Set<T>().AddRangeAsync(entities);
+            return entities;
+        }
+        public void DeleteRange(IEnumerable<T> entities)
+        {
+            _context.Set<T>().RemoveRange(entities);
+        }
     }
 }

@@ -74,7 +74,7 @@ namespace FootballApi.EF.Repositories
         {
             var authDto = new AuthModelDTO();
             var user = await _userManager.FindByEmailAsync(dto.Email);
-            if (user is null || await _userManager.CheckPasswordAsync(user, dto.Password))
+            if (user is null ||! await _userManager.CheckPasswordAsync(user, dto.Password))
             {
                 authDto.Message = "Email or Password is incorrect!";
                 return authDto;
@@ -164,7 +164,8 @@ namespace FootballApi.EF.Repositories
             var token = new JwtSecurityToken(
                 issuer: _jwt.ValidIssuer,
                 audience: _jwt.ValidAudiance,
-                expires:DateTime.Now.AddMinutes(5),
+                claims: claims,
+                expires:DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes),
                 signingCredentials: signInCredentials
                 );
             return token;
